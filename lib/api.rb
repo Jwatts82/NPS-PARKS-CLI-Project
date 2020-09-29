@@ -10,8 +10,10 @@ class API
         parks=JSON.parse(response)["data"].each do |p|
             Park.new(full_name: p["fullName"], park_id: p["parkCode"], state_code: state_code) if p["fullName"] !=nil
         end
-
     end
+
+    def self.get_parks()
+        
 end
 
 
