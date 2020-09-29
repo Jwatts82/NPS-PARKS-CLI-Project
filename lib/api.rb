@@ -19,11 +19,12 @@ class API
         response=Net::HTTP.get(uri)
         #binding.pry
         park_info = JSON.parse(response)["data"][0]
+        #binding.pry
         park.description = park_info["description"]
-        park.operating_hours = park_info["operatingHours"]
+        park.operating_hours = park_info["operatingHours"][0]['standardHours']
         park.directions = park_info["directionsUrl"]
-        park.activities = park_info["activities"]
-        park.contacts = park_info["contacts"]
+        #park.activities = park_info["activities"]
+        #park.contacts = park_info["contacts"]
         binding.pry
     end
 

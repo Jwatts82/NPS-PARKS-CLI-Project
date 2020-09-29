@@ -44,7 +44,25 @@ class CLI
     end
 
     def print_park(park)
-    #puts info
+        puts ("")
+        puts park.full_name
+        puts ("")
+        puts park.park_id
+        puts ("")
+        puts park.description
+        puts ("")
+        puts "Monday: #{park.operating_hours["monday"]}"
+        puts "Tuesday: #{park.operating_hours["tuesday"]}"
+        puts "Wednesday: #{park.operating_hours["wednesday"]}"
+        puts "Thursday: #{park.operating_hours["thursday"]}"
+        puts "Friday: #{park.operating_hours["friday"]}"
+        puts "Saturday: #{park.operating_hours["saturday"]}"
+        puts "Sunday: #{park.operating_hours["sunday"]}"
+        puts ("")
+        puts "Directions:" park.directions
+        puts ("")
+        puts park.contacts
+        puts ("")
     end
 
 end
