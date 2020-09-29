@@ -12,7 +12,7 @@ class API
         end
     end
 
-    def self.get_parks(park)
+    def self.get_park(park)
         key=ENV["API_KEY"].split('=')[1]
         url="https://developer.nps.gov/api/v1/parks?parkCode=#{park_code}&api_key=#{key}"
         uri=URI(url)
