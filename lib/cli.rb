@@ -12,7 +12,8 @@ class CLI
         prompt
         input = gets.strip.downcase
         while input != 'exit' do
-            if input == 'state_code'
+            if input == 'state code'
+                puts "Enter state code for a list of parks or'exit' to exit"
                 @state_code = gets.strip.downcase
                 API.get_parks(@state_code) if Park.find_by_state_code(@state_code).length == 0
                 print_parks
@@ -20,10 +21,10 @@ class CLI
                 park = Park.find_by_state_code(@state_code)[input.to_i-1]
                 API.get_park(park) if !park.directions
                 print_park(park)
-                prompt
             else 
                 puts "Sorry but I do not understand.  Please try again."
             end
+            prompt
             input = gets.strip.downcase
         end
         puts "Thanks for using my app!"
