@@ -1,6 +1,7 @@
 require 'pry'
 require 'HTTParty'
 require 'json'
+require 'dotenv'
 
 
 require_relative '../lib/cli'
