@@ -13,7 +13,9 @@ class CLI
         input = gets.strip.downcase
         while input != 'exit' do
             if input == 'state_code'
-            
+                @state_code = gets.strip.downcase
+                API.get_parks(@state_code) if Park.find_by_state_code(@state_code).length == 0
+                print_parks
             elsif input.to_i > 0 && input.to_i <= Park.find_by_state_code(@state_code).length
                 park = Park.find_by_state_code(@state_code)[input.to_i-1]
                 API.get_park(park) if !park.directions
