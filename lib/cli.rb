@@ -25,6 +25,8 @@ class CLI
             end
             input = gets.strip.downcase
         end
+        puts "Thanks for using my great app!"
+        puts "See you soon"
     end
     
     def prompt
