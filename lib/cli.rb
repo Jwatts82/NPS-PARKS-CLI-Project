@@ -20,12 +20,13 @@ class CLI
                 park = Park.find_by_state_code(@state_code)[input.to_i-1]
                 API.get_park(park) if !park.directions
                 print_park(park)
+                prompt
             else 
                 puts "Sorry but I do not understand.  Please try again."
             end
             input = gets.strip.downcase
         end
-        puts "Thanks for using my great app!"
+        puts "Thanks for using my app!"
         puts "See you soon"
     end
     
@@ -42,7 +43,7 @@ class CLI
     end
 
     def print_park(park)
-    #puts going through info
+    #puts info
     end
 
 end
