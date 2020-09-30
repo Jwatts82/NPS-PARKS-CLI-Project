@@ -2,9 +2,11 @@ class CLI
 
     def run
         puts ""
-        puts "Welcome to the National Park Finder"
+        `say "Welcome to the National Parks Services Site Finder"`
+        puts "Welcome to the National Parks Services Site Finder".red
         puts ""
-        puts "Enter state code for a list of national parks service sites or'exit' to exit"
+        `say "Enter a state code for a list of national parks service sites or type 'exit' to exit"`
+        puts "Enter a state code for a list of national parks service sites or type 'exit' to exit".red
         puts ""
         @state_code = gets.strip.downcase
         API.get_parks(@state_code) 
@@ -13,7 +15,7 @@ class CLI
         input = gets.strip.downcase
         while input != 'exit' do
             if input == 'state code'
-                puts "Enter state code for a list of parks or'exit' to exit"
+                puts "Enter state code for a list of parks or'exit' to exit".red
                 @state_code = gets.strip.downcase
                 API.get_parks(@state_code) if Park.find_by_state_code(@state_code).length == 0
                 print_parks
@@ -22,18 +24,21 @@ class CLI
                 API.get_park(park) if !park.directions
                 print_park(park)
             else 
-                puts "Sorry but I do not understand.  Please try again."
+                `say "Sorry but I do not understand. Please try again"`
+                puts "Sorry but I do not understand.  Please try again.".red
             end
             prompt
             input = gets.strip.downcase
         end
+        `say "Thanks for using my app!, See you soon"`
         puts "Thanks for using my app!"
         puts "See you soon"
     end
     
     def prompt
         puts ""
-        puts "Enter a number for park information, 'state code' to see another list or'exit' to exit"
+        `say "Enter a number to see park information, type 'state code' to see another list or type 'exit' to exit"`
+        puts "Enter a number to see park information, type 'state code' to see another list or type 'exit' to exit".red
         puts ""
     end
 
