@@ -45,13 +45,13 @@ class CLI
 
     def print_park(park)
         puts ""
-        puts park.full_name
+        puts park.full_name.magenta.bold
         puts ""
-        puts "Description:"
+        puts "Description:".green.bold
         puts ""
         puts park.description
         puts ""
-        puts "Operating Hours:"
+        puts "Operating Hours:".green.bold
         puts ""
         puts "Monday: #{park.operating_hours["monday"]}"
         puts "Tuesday: #{park.operating_hours["tuesday"]}"
@@ -61,22 +61,18 @@ class CLI
         puts "Saturday: #{park.operating_hours["saturday"]}"
         puts "Sunday: #{park.operating_hours["sunday"]}"
         puts ""
-        puts "Entrance Fee:"
-        puts park.entrance_fees
+        #puts "Entrance Fee:".green.bold
+        #puts park.entrance_fees
         puts ""
-        puts "Activities:"
-        puts ""
-        puts park.activities
-        puts ""
-        puts "Weather:"
+        puts "Weather:".green.bold
         puts ""
         puts park.weather
         puts ""
-        puts "Directions"
+        puts "Directions".green.bold
         puts ""
         puts park.directions
         puts ""
-        puts "Contact Informations:"
+        puts "Contact Information:".green.bold
         puts park.contacts
     end
 

@@ -1,5 +1,5 @@
 class Park
-    attr_accessor :full_name, :state_code, :park_id, :operating_hours, :directions, :description, :entrance_fees, :weather, :activities, :contacts
+    attr_accessor :full_name, :state_code, :park_id, :operating_hours, :directions, :description, :entrance_fees, :weather, :contacts
     @@all = []
 
     def initialize (full_name:, state_code:, park_id:)

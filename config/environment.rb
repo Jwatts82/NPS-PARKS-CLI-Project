@@ -2,6 +2,7 @@ require 'pry'
 require 'HTTParty'
 require 'json'
 require 'dotenv'
+require 'colorator'
 
 
 require_relative '../lib/cli'
