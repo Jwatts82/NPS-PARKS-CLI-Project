@@ -23,7 +23,7 @@ class API
         park.description = park_info["description"]
         park.operating_hours = park_info["operatingHours"][0]["standardHours"]
         park.directions = park_info["directionsInfo"]
-       # park.entrance_fees = park_info["entranceFees"][0]["cost"]
+        park.entrance_fees = park_info["entranceFees"][0]["cost"]
         park.weather = park_info["weatherInfo"]
         park.contacts = park_info["contacts"]["phoneNumbers"][0]["phoneNumber"]
         #binding.pry

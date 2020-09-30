@@ -2,24 +2,28 @@ class CLI
     STATES=["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
     def run
         puts ""
-        #`say "Welcome to the National Parks Services Site Finder"`
-        puts "Welcome to the National Parks Services Site Finder".red
+        `say "Welcome to the National Parks Services Site Finder"`
+        puts "Welcome to the National Parks Services Site Finder".yellow
         puts ""
-        #`say "Enter a state code for a list of national parks service sites or type 'exit' to exit"`
-        puts "Enter a state code for a list of national parks service sites or type 'exit' to exit".red
+        `say "Enter a state code for a list of national parks service sites or type 'exit' to exit"`
+        puts "Enter a state code for a list of national parks service sites or type 'exit' to exit".yellow
         puts ""
         @state_code = gets.strip.downcase
-            while !STATES.include?(@state_code.upcase) do
+        if @state_code != 'exit'
+            !STATES.include?(@state_code.upcase) do
                 puts "That is not a state code, please enter a state code for a list of parks or type 'exit' to exit".red
                 @state_code = gets.strip.downcase
             end
-        API.get_parks(@state_code) 
-        print_parks
-        prompt
-        input = gets.strip.downcase
+            API.get_parks(@state_code)
+            print_parks
+            prompt
+            input = gets.strip.downcase
+        else
+            input = @state_code
+        end
         while input != 'exit' do
             if input == 'state code'
-                puts "Enter state code for a list of parks or type 'exit' to exit".red
+                puts "Enter state code for a list of parks or type 'exit' to exit".yellow
                 @state_code = gets.strip.downcase
                 #binding.pry
                 while !STATES.include?(@state_code.upcase) do
@@ -34,21 +38,21 @@ class CLI
                 API.get_park(park) if !park.directions
                 print_park(park)
             else 
-                #`say "Sorry but I do not understand. Please try again"`
+                `say "Sorry but I do not understand. Please try again"`
                 puts "Sorry but I do not understand.  Please try again.".red
             end
             prompt
             input = gets.strip.downcase
         end
-        #`say "Thanks for using my app!, See you soon"`
-        puts "Thanks for using my app!"
-        puts "See you soon"
+        `say "Thanks for using my app!, See you soon"`
+        puts "Thanks for using my app!".bold
+        puts "See you soon".bold
     end
     
     def prompt
         puts ""
-       # `say "Enter a number to see park information, type 'state code' to see another list or type 'exit' to exit"`
-        puts "Enter a number to see park information, type 'state code' to see another list or type 'exit' to exit".red
+        `say "Enter a number to see park information, type 'state code' to see another list or type 'exit' to exit"`
+        puts "Enter a number to see park information, type 'state code' to see another list or type 'exit' to exit".yellow
         puts ""
     end
 
@@ -76,8 +80,8 @@ class CLI
         puts "Saturday: #{park.operating_hours["saturday"]}"
         puts "Sunday: #{park.operating_hours["sunday"]}"
         puts ""
-        #puts "Entrance Fee:".green.bold
-        #puts park.entrance_fees
+        puts "Entrance Fee:".green.bold
+        puts park.entrance_fees
         puts ""
         puts "Weather:".green.bold
         puts ""
