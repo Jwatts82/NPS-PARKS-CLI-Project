@@ -21,10 +21,12 @@ class API
         park_info = JSON.parse(response)["data"][0]
         #binding.pry
         park.description = park_info["description"]
-        park.operating_hours = park_info["operatingHours"][0]['standardHours']
-        park.directions = park_info["directionsUrl"]
-        #park.activities = park_info["activities"]
-        #park.contacts = park_info["contacts"]
+        park.operating_hours = park_info["operatingHours"][0]["standardHours"]
+        park.directions = park_info["directionsInfo"]
+        park.entrance_fees = park_info["entranceFees"][0]["cost"]
+        park.weather = park_info["weatherInfo"]
+        park.activities = park_info["activities"][1]["name"]
+        park.contacts = park_info["contacts"]["phoneNumbers"][0]["phoneNumber"]
         binding.pry
     end
 

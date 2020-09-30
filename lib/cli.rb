@@ -4,7 +4,7 @@ class CLI
         puts ""
         puts "Welcome to the National Park Finder"
         puts ""
-        puts "Enter state code for a list of parks or'exit' to exit"
+        puts "Enter state code for a list of national parks service sites or'exit' to exit"
         puts ""
         @state_code = gets.strip.downcase
         API.get_parks(@state_code) 
@@ -44,13 +44,15 @@ class CLI
     end
 
     def print_park(park)
-        puts ("")
+        puts ""
         puts park.full_name
-        puts ("")
-        puts park.park_id
-        puts ("")
+        puts ""
+        puts "Description:"
+        puts ""
         puts park.description
-        puts ("")
+        puts ""
+        puts "Operating Hours:"
+        puts ""
         puts "Monday: #{park.operating_hours["monday"]}"
         puts "Tuesday: #{park.operating_hours["tuesday"]}"
         puts "Wednesday: #{park.operating_hours["wednesday"]}"
@@ -58,11 +60,24 @@ class CLI
         puts "Friday: #{park.operating_hours["friday"]}"
         puts "Saturday: #{park.operating_hours["saturday"]}"
         puts "Sunday: #{park.operating_hours["sunday"]}"
-        puts ("")
-        puts "Directions:" park.directions
-        puts ("")
+        puts ""
+        puts "Entrance Fee:"
+        puts park.entrance_fees
+        puts ""
+        puts "Activities:"
+        puts ""
+        puts park.activities
+        puts ""
+        puts "Weather:"
+        puts ""
+        puts park.weather
+        puts ""
+        puts "Directions"
+        puts ""
+        puts park.directions
+        puts ""
+        puts "Contact Informations:"
         puts park.contacts
-        puts ("")
     end
 
 end
