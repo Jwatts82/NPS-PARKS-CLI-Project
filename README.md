@@ -6,10 +6,15 @@ This Ruby Gem provides a CLI allows the user to search for a National Park Servi
 The following gems are needed to successfully run this CLI and are required in the config/environment folder: HTTParty, Json, Pry, Dotenv and Colorator.
 
 To install:
+
     $ gem install httparty
+
     $ gem install json
+    
     $ gem install pry
+    
     $ gem install dotenv
+    
     $ gem install colorator
 
 ## Usage
