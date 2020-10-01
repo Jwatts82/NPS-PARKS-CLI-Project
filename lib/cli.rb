@@ -37,14 +37,18 @@ class CLI
                 park = Park.find_by_state_code(@state_code)[input.to_i-1]
                 API.get_park(park) if !park.directions
                 print_park(park)
+                puts ""
+                puts "Currently Selected State Code's National Parks Services Sites:".magenta
+                puts ""
+                print_parks
             else 
-                `say "Sorry but I do not understand. Please try again"`
+               `say "Sorry but I do not understand. Please try again"`
                 puts "Sorry but I do not understand.  Please try again.".red
             end
             prompt
             input = gets.strip.downcase
         end
-        `say "Thanks for using my app!, See you soon"`
+       `say "Thanks for using my app!, See you soon"`
         puts "Thanks for using my app!".bold
         puts "See you soon".bold
     end
@@ -93,6 +97,8 @@ class CLI
         puts ""
         puts "Contact Information:".green.bold
         puts park.contacts
+        puts ""
+        puts ""
     end
 
 end
