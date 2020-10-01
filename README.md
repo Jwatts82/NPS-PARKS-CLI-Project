@@ -3,6 +3,14 @@
 This Ruby Gem provides a CLI allows the user to search for a National Park Service site by state and select the site to see more information about the specific site.
 
 ## Installation
+You will need to retrieve a key from the National Parks Services site in order to run the CLI, you can do that here:
+
+[NPS KEY](https://www.nps.gov/subjects/developer/get-started.htm)
+
+You will then need to install the key in your terminal:
+
+API_KEY=API_KEY=copy and paste your key here
+
 The following gems are needed to successfully run this CLI and are required in the config/environment folder: HTTParty, Json, Pry, Dotenv and Colorator.
 
 To install:
