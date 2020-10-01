@@ -18,7 +18,9 @@ To install:
     $ gem install colorator
 
 ## Usage
-To execute this CLI, type ruby bin/parks into the terminal.Follow along with the prompts to see a list of National Park Services sites by state and learn more information about specific National Park Services sites.
+To execute this CLI, type ruby bin/parks into the terminal. 
+
+Follow along with the prompts to see a list of National Park Services sites by state and learn more information about specific National Park Services sites.
 
 ## Contributing
 
