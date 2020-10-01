@@ -1,12 +1,11 @@
 class CLI
     STATES=["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
     def run
-        puts ""
-        `say "Welcome to the National Parks Services Site Finder"`
         puts "Welcome to the National Parks Services Site Finder".yellow
+        `say "Welcome to the National Parks Services Site Finder"`
         puts ""
-        `say "Enter a state code for a list of national parks service sites or type 'exit' to exit"`
         puts "Enter a state code for a list of national parks service sites or type 'exit' to exit".yellow
+        `say "Enter a state code for a list of national parks service sites or type 'exit' to exit"`
         puts ""
         @state_code = gets.strip.downcase
         if @state_code != 'exit'
@@ -42,15 +41,15 @@ class CLI
                 puts ""
                 print_parks
             else 
-               `say "Sorry but I do not understand. Please try again"`
                 puts "Sorry but I do not understand.  Please try again.".red
+                `say "Sorry but I do not understand. Please try again"`
             end
             prompt
             input = gets.strip.downcase
         end
-       `say "Thanks for using my app!, See you soon"`
         puts "Thanks for using my app!".bold
         puts "See you soon".bold
+        `say "Thanks for using my app!, See you soon"`
     end
     
     def prompt
