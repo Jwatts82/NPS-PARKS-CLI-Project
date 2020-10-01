@@ -23,7 +23,7 @@ class CLI
         while input != 'exit' do
             if input == 'state code'
                 `say "Enter a state code for a list of sites or type 'exit' to exit"`
-                puts "Enter a state code for a list of sites or type 'exit' to exit".cyan.bole
+                puts "Enter a state code for a list of sites or type 'exit' to exit".cyan.bold
                 @state_code = gets.strip.downcase
                 while !STATES.include?(@state_code.upcase) do
                     puts "That is not a state code, please enter a state code for a list of sites".red.bold
