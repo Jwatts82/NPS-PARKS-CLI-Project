@@ -8,11 +8,13 @@ class CLI
         #`say "Enter a state code for a list of national parks service sites or type 'exit' to exit"`
         puts ""
         @state_code = gets.strip.downcase
+        #binding.pry
         if @state_code != 'exit'
-            !STATES.include?(@state_code.upcase) do
+            while !STATES.include?(@state_code.upcase) do
                 puts "That is not a state code, please enter a state code for a list of parks or type 'exit' to exit".red
                 @state_code = gets.strip.downcase
             end
+        
             API.get_parks(@state_code)
             print_parks
             prompt
