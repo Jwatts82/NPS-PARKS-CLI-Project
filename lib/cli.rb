@@ -24,10 +24,8 @@ class CLI
             if input == 'state code'
                 puts "Enter state code for a list of parks or type 'exit' to exit".yellow
                 @state_code = gets.strip.downcase
-                #binding.pry
                 while !STATES.include?(@state_code.upcase) do
                     puts "That is not a state code, please enter a state code for a list of parks or type 'exit' to exit".red
-                    #binding.pry
                     @state_code = gets.strip.downcase
                 end
                 API.get_parks(@state_code) if Park.find_by_state_code(@state_code).length == 0
