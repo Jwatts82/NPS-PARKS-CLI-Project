@@ -1,10 +1,10 @@
 class CLI
     STATES=["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
     def run
-        puts "Welcome to the National Parks Services Site Finder".blue.bold
+        puts "Welcome to the National Parks Services Site Finder".cyan.bold
         `say "Welcome to the National Parks Services Site Finder"`
         puts ""
-        puts "Enter a state code for a list of national parks service sites or type 'exit' to exit".blue.bold
+        puts "Enter a state code for a list of national parks service sites or type 'exit' to exit".cyan.bold
         `say "Enter a state code for a list of national parks service sites or type 'exit' to exit"`
         puts ""
         @state_code = gets.strip.downcase
@@ -23,7 +23,7 @@ class CLI
         while input != 'exit' do
             if input == 'state code'
                 `say "Enter a state code for a list of sites or type 'exit' to exit"`
-                puts "Enter a state code for a list of sites or type 'exit' to exit".blue.bole
+                puts "Enter a state code for a list of sites or type 'exit' to exit".cyan.bole
                 @state_code = gets.strip.downcase
                 while !STATES.include?(@state_code.upcase) do
                     puts "That is not a state code, please enter a state code for a list of sites".red.bold
@@ -45,7 +45,7 @@ class CLI
             end
             puts ""
             `say "Enter a number to see another sites information, type 'state code' to see another list or type 'exit' to exit"`
-            puts "Enter a number to see another sites information, type 'state code' to see another list or type 'exit' to exit".blue.bold
+            puts "Enter a number to see another sites information, type 'state code' to see another list or type 'exit' to exit".cyan.bold
             puts ""
             input = gets.strip.downcase
         end
@@ -57,7 +57,7 @@ class CLI
     def prompt
         puts ""
         `say "Enter a number to see site information, type 'state code' to see another list or type 'exit' to exit"`
-        puts "Enter a number to see site information, type 'state code' to see another list or type 'exit' to exit".blue.bold
+        puts "Enter a number to see site information, type 'state code' to see another list or type 'exit' to exit".cyan.bold
         puts ""
     end
 
