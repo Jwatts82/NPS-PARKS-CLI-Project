@@ -1,4 +1,4 @@
-# Worlds Best Restaurants
+# National Parks Services Sites
 ### This is an adaptation of the original gem written by dannyd4315. I have added in CSS selectors in the restaurant.rb file, and updated the scraped urls to use https instead of http. 
 
 This Ruby Gem provides a CLI allows the user to search for a National Park Service site by state and select the site to see more information about the specific site.
